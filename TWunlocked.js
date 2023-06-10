@@ -7,6 +7,7 @@
 // @match *://turbowarp.org/*
 // @match *://www.turbowarp.org/*
 // @grant *
+// @run-at document-end
 // ==/UserScript==
 // Made By SurvExE1Pc.
 const TWunlocked = unsafeWindow.document.createElement('script');
