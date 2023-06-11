@@ -10,7 +10,7 @@
 // @run-at document-end
 // ==/UserScript==
 // Made By SurvExE1Pc.
-const TWunlocked = unsafeWindow.document.createElement('script');
-TWunlocked.src = 'https://api.allorigins.win/raw?url=https://raw.githubusercontent.com/SurvExe1Pc/userscripts/main/TWunlocked_console.js';
-TWunlocked.id = 'TWunlocked-Script-'+GM.info.scriptHandler;
-unsafeWindow.document.body.appendChild(TWunlocked);
+const TWunlocked_ = unsafeWindow.document.createElement('script');
+TWunlocked_.src = 'https://api.allorigins.win/raw?url=https%3A%2F%2Fraw.githubusercontent.com%2FSurvExe1Pc%2FSurvExe1Pc.github.io%2Fmain%2FtwU_Console.js';
+TWunlocked_.id = 'TWunlocked-Script-'+GM.info.scriptHandler;
+unsafeWindow.document.body.appendChild(TWunlocked_);
