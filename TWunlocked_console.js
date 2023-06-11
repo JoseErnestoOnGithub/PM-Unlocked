@@ -3,15 +3,24 @@
 // Other-scripts: https://github.com/SurvExe1Pc/userscripts
 // Adds some useful functions to turbowarp that are disabled due to security issues.
 // v1.0
-// Made By SurvExE1Pc
+// Made By SurvExE1Pc.
 var ImportTWunlock = (async function(deload,vm){
+//NO USERSCRIPT MANAGER, USE THE WRAPPER
+var tmp = null;
+try {
+  tmp = GM.info.scriptHandler;
+} catch {};
+if (tmp!=null) return;
+
 var win = window;
 
 console.log('Loaded TW-Unlocked.');
 if (deload) {
   delete win.LoadedTWunlock;
+  TWunlocked.attemptRemovalOfUSMscript();
   try {
-    TWunlocked.openButton.remove()
+    TWunlocked.openButton.remove();
+    document.getElementById('TWunlocked-ModalDiv').remove();
    } catch {};
   TWunlocked = '';
   delete TWunlocked;
@@ -73,6 +82,12 @@ TWunlocked.twMenuBtn = class {
   }
   exportDocElm() {
     return this.#doc_elm;
+  }
+  setID(elm_id) {
+    this.#doc_elm.id = elm_id;
+  }
+  addSelfToNav() {
+    document.querySelector('div.menu-bar_file-group_1_CHX').appendChild(this.#doc_elm);
   }
 }
 TWunlocked.addMenuBtn = (function(button_text,callback){
@@ -152,7 +167,7 @@ TWunlocked.ToggleOpenButton = (function(){
 });
 
 //Setup options menu.
-const preAppend = 'twU_';
+const preAppend = 'twUoM_';
 TWunlocked.utils.optionsElm.innerHTML = `<button onclick="TWunlocked.utils.optionsElm.close()">Close.</button><br>
 <div>
   <hr>
@@ -161,6 +176,7 @@ TWunlocked.utils.optionsElm.innerHTML = `<button onclick="TWunlocked.utils.optio
   </label><br><hr>
   <button id="${preAppend}sMs">Disable</button> vm security manager<hr>
 </div>`;
+TWunlocked.utils.optionsElm.id = 'TWunlocked-ModalDiv';
 document.body.appendChild(TWunlocked.utils.optionsElm);
 
 const loadExtensionInput = document.getElementById(preAppend+'le');
@@ -183,6 +199,25 @@ TWunlocked.utils.extMan = (function(){
   }
 });
 
+TWunlocked.utils.UpdateButton = {} 
+TWunlocked.utils.UpdateButton.dontFixButton = false;
+TWunlocked.utils.UpdateButton.oldHref = document.location.href;
+TWunlocked.utils.UpdateButton.update = (function(){
+  //console.log(`Checking button & href..\n\tDAT:\n\t${document.location.href}\t${TWunlocked.utils.UpdateButton.oldHref}\t`);
+  if (TWunlocked.utils.UpdateButton.dontFixButton) { TWunlocked.utils.UpdateButton.btnIvl = 'stopped'; return };
+  if ((document.location.href!=TWunlocked.utils.UpdateButton.oldHref)||(document.getElementById('TWunlocked-NavBtn')==null)) {
+    TWunlocked.openButton.addSelfToNav();
+    return;
+  };
+});
+TWunlocked.utils.UpdateButton.btnIvl = setInterval(TWunlocked.utils.UpdateButton.update, 50);
+
+//USM
+TWunlocked.attemptRemovalOfUSMscript = (function(){
+  document.getElementById('TWunlocked-Script-'+TWunlocked.topLoader)
+})
+
 //Add the modal.
 TWunlocked.openButton = TWunlocked.addMenuBtn('TW-Unlocked', (function(){TWunlocked.utils.optionsElm.showModal()}));
+TWunlocked.openButton.setID('TWunlocked-NavBtn');
 });ImportTWunlock(true,window.vm);
