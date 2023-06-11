@@ -12,4 +12,5 @@
 // Made By SurvExE1Pc.
 const TWunlocked = unsafeWindow.document.createElement('script');
 TWunlocked.src = 'https://api.allorigins.win/raw?url=https://raw.githubusercontent.com/SurvExe1Pc/userscripts/main/TWunlocked_console.js';
+TWunlocked.id = 'TWunlocked-Script-'+GM.info.scriptHandler;
 unsafeWindow.document.body.appendChild(TWunlocked);
