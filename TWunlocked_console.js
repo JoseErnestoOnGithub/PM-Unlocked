@@ -1,3 +1,16 @@
+// ==UserScript==
+// @name TW-Unlocked (Console)
+// @namespace https://github.com/SurvExe1Pc/userscripts
+// @description THIS WILL NOT WORK AS YOU ARE USING THE CONSOLE VERSION
+// @version v0.0.0.0.0.0.0.0.0.0.0.0.0.0
+// @icon https://turbowarp.org/favicon.ico
+// @match *://turbowarp.org/*
+// @match *://www.turbowarp.org/*
+// @grant *
+// @run-at document-end
+// ==/UserScript==
+//The above is fake data
+
 // ==IMPORT VIA BOOKMARKLET OR CONSOLE==
 // TW-Unlocked
 // Other-scripts: https://github.com/SurvExe1Pc/userscripts
@@ -5,11 +18,13 @@
 // v1.0
 // Made By SurvExE1Pc.
 var ImportTWunlock = (async function(deload,vm){
-//NO USERSCRIPT MANAGER, USE THE WRAPPER
+
+//Disable userscript.
 var tmp = null;
 try {
   tmp = GM.info.scriptHandler;
 } catch {};
+if (tmp!=null) console.log('USE THE USERSCRIPT VERSION NOT THE CONSOLE');
 if (tmp!=null) return;
 
 var win = window;
@@ -17,10 +32,10 @@ var win = window;
 console.log('Loaded TW-Unlocked.');
 if (deload) {
   delete win.LoadedTWunlock;
-  TWunlocked.attemptRemovalOfUSMscript();
   try {
-    TWunlocked.openButton.remove();
     document.getElementById('TWunlocked-ModalDiv').remove();
+    TWunlocked.attemptRemovalOfUSMscript();
+    TWunlocked.openButton.remove();
    } catch {};
   TWunlocked = '';
   delete TWunlocked;
