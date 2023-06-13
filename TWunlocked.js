@@ -2,10 +2,9 @@
 // @name TW-Unlocked
 // @namespace https://github.com/SurvExe1Pc/userscripts
 // @description Adds some useful functions to turbowarp that are disabled due to security issues.
-// @version v1.0
+// @version v1.1
 // @icon https://turbowarp.org/favicon.ico
-// @match *://turbowarp.org/*
-// @match *://www.turbowarp.org/*
+// @include *
 // @grant *
 // @run-at document-end
 // ==/UserScript==
