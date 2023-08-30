@@ -30,7 +30,7 @@
     } }; })();
 
     //Main code
-    let scriptURL = 'https://api.allorigins.win/raw?url=https%3A%2F%2Fraw.githubusercontent.com%2FSurvExe1Pc%2FSurvExe1Pc.github.io%2Fmain%2FtwU_Console.js';
+    let scriptURL = 'https://corsproxy.io/?https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FSurvExe1Pc%2FSurvExe1Pc.github.io%40main%2FtwU_Console.js';
     let scriptID = 'TWunlocked-Script-'+GM.info.scriptHandler;
 
     GM_addElement('script', {
