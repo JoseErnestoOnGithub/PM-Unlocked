@@ -30,7 +30,7 @@
     } }; })();
 
     //Main code
-    let scriptURL = 'https://cdn.jsdelivr.net/gh/SurvExe1Pc/SurvExe1Pc.github.io@main/twU_Console.js';
+    let scriptURL = 'https://cdn.jsdelivr.net/gh/SurvExe1Pc/SurvExe1Pc.github.io@latest/twU_Console.js';
     let scriptID = 'TWunlocked-Script-'+GM.info.scriptHandler;
 
     GM_addElement('script', {
