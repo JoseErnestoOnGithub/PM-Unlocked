@@ -2,7 +2,7 @@
 // @name TW-Unlocked (GreaseMonkey)
 // @namespace https://github.com/SurvExe1Pc/userscripts
 // @description Adds some useful functions to turbowarp that are disabled due to security issues.
-// @version v1.5
+// @version v1.6
 // @icon https://turbowarp.org/favicon.ico
 // @includes *
 // @grant *
@@ -30,7 +30,7 @@
     } }; })();
 
     //Main code
-    let scriptURL = 'https://corsproxy.io/?https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FSurvExe1Pc%2FSurvExe1Pc.github.io%40main%2FtwU_Console.js';
+    let scriptURL = 'https://cdn.jsdelivr.net/gh/SurvExe1Pc/SurvExe1Pc.github.io@main/twU_Console.js';
     let scriptID = 'TWunlocked-Script-'+GM.info.scriptHandler;
 
     GM_addElement('script', {
