@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name TW-Unlocked
+// @name TW-Unlocked (GreaseMonkey)
 // @namespace https://github.com/SurvExe1Pc/userscripts
 // @description Adds some useful functions to turbowarp that are disabled due to security issues.
 // @version v1.5
