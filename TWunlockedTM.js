@@ -1,11 +1,12 @@
 // ==UserScript==
-// @name TW-Unlocked (TamperMonkey)
+// @name TW-Unlocked (TamperMonkey Development)
 // @namespace https://github.com/SurvExe1Pc/userscripts
 // @description Adds some useful functions to turbowarp that are disabled due to security issues.
-// @version v1.8
+// @version v1.9
 // @icon https://turbowarp.org/favicon.ico
 // @match *://*/*
 // @grant unsafeWindow
+// @grant GM_xmlhttpRequest
 // @sandbox raw
 // @run-at document-end
 // ==/UserScript==
@@ -30,12 +31,15 @@
     } }; })();
 
     //Main code
-    let scriptURL = 'https://cdn.jsdelivr.net/gh/SurvExe1Pc/SurvExe1Pc.github.io@latest/twU_Console.js?version='+Date.now().toString();
-    let scriptID = 'TWunlocked-Script-'+GM.info.scriptHandler;
+    let scriptURL = `https://corsproxy.io/?${encodeURIComponent('https://raw.githubusercontent.com/SurvExe1Pc/SurvExe1Pc.github.io/main/twU_Console.js?version='+Date.now().toString())}`;
 
-    GM_addElement('script', {
-        src: scriptURL,
-        id: scriptID,
-        type: 'text/javascript'
+    GM_xmlhttpRequest({
+        method: "GET",
+        url: scriptURL,
+        onload: function(response) {
+            unsafeWindow.eval(response.responseText);
+        }
     });
+
+    return;
 })();
