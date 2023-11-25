@@ -2,7 +2,7 @@
 // @name PM-Unlocked
 // @namespace https://github.com/SurvExe1Pc/userscripts
 // @description Adds some useful functions to PenguinMod that are disabled due to security issues.
-// @version v1.9
+// @version v2.0
 // @icon https://penguinmod.com/favicon.ico
 // @match *://*/*
 // @grant unsafeWindow
